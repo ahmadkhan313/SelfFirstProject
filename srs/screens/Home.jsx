@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
   Txt : {
     fontSize : 20, 
     fontWeight : "bold" ,
-    padding : 10 
+    padding : 20 
   },
   btn : {
     backgroundColor : "black",
