@@ -1,18 +1,12 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import Home from './srs/screens/Home'
 
-
-const App = () => {
+export default function LowStocks() {
   return (
     <View>
-      <Home/>
-
+      <Text>LowStocks</Text>
     </View>
-
   )
 }
-
-export default App
 
 const styles = StyleSheet.create({})
