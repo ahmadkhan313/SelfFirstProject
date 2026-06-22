@@ -5,6 +5,18 @@ import LowStocks from './LowStocks'
 import Create from './Create'
 
 
+const data  = [
+  {id : 1 , name : "Dona" , stock : 5 , unit : "Bori"},
+  {id : 2 , name : "Pattal" , stock : 8 , unit : "Bori"},
+  {id : 3 , name : "Fancy Glass" , stock : 3 , unit : "Cartoon"},
+  {id : 4 , name : "Normal Glass" , stock : 6 , unit : "Cartoon"},
+  {id : 5 , name : "Coffe Cup" , stock : 5 , unit : " Cartoon"},
+  {id : 6 , name : " Wood Spoon" , stock : 25 , unit : "packet"},
+  {id : 7 , name : "Plastic Spoon" , stock : 30 , unit : "Packet"},
+]
+
+
+
 const Home = () => {
 
   const [view,setview] = useState(0)
@@ -14,24 +26,24 @@ const Home = () => {
       <View style ={styles.btnContainer}>
 
         <Pressable  onPress={()=> setview(0)}>
-          <Text style = {styles.btntxt}>
+          <Text style = {[styles.btntxt , view === 0 ? {backgroundColor : "green" , color : "white"} : null] }> 
             All Items
           </Text>
         </Pressable>
          <Pressable onPress={ ()=> setview(1)}>
-          <Text style = {styles.btntxt}>
+          <Text style = {[styles.btntxt , view === 1 ? {backgroundColor : "green" , color : "white"} : null]}>
             Low Stock
           </Text>
         </Pressable>
          <Pressable onPress={()=> setview(2)}>
-          <Text style = {styles.btntxt}>
+          <Text style = {[styles.btntxt , view === 2 ? {backgroundColor : "green", color : "white"} : null]}>
             Creat
           </Text>
         </Pressable>
 
         
       </View>
-      {view === 0 && <AllItems/>}
+      {view === 0 && <AllItems data = {data}/>}
       {view === 1 && <LowStocks/>}
       {view === 2 && <Create/>}
     </View>
