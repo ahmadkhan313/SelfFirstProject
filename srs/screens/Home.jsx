@@ -45,7 +45,7 @@ const Home = () => {
       </View>
       {view === 0 && <AllItems data = {data}/>}
       {view === 1 && <AllItems data = {data.filter ((item) => item.stock <6 ) }/>}
-      {view === 2 && <Create/>}
+      {view === 2 && <Create data={data}/>}
     </View>
   )
 }
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     fontSize :15,
     borderRadius : 10 ,
     borderWidth : 1 ,
-    borderColor : "green",
+    borderColor : "black",
     color : "black",
     fontWeight : "bold"
 

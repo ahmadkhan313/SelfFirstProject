@@ -51,7 +51,9 @@ const styles = StyleSheet.create({
      flexDirection : "row",
     justifyContent : "space-between",
     padding : 15 ,
-    borderRadius : 7
+    borderRadius : 7,
+    borderColor : "black",
+    borderWidth : 1
 
   },
   ItemTxt : {
