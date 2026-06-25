@@ -13,6 +13,7 @@ const data  = [
   {id : 5 , name : "Coffe Cup" , stock : 5 , unit : " Cartoon"},
   {id : 6 , name : " Wood Spoon" , stock : 25 , unit : "packet"},
   {id : 7 , name : "Plastic Spoon" , stock : 30 , unit : "Packet"},
+  
 ]
 
 

@@ -31,11 +31,9 @@ export default function Create({data}) {
       <View>
             <View style= {styles.headingContainer}>
               <Text style = {styles.headingTxt}>
-                 Items
+                 All itm in the stock
               </Text>
-              <Text style = {styles.headingTxt}>
-                Quantity
-              </Text>
+             
             </View>
       
             <FlatList
@@ -54,6 +52,16 @@ export default function Create({data}) {
       
               )}
               contentContainerStyle = {{gap : 10 }}/>
+          </View>
+          <View>
+             <Text style = {styles.ItemTxt}>
+                 Edit
+              </Text>
+              <Text style = {styles.ItemTxt}>
+                Delete
+              </Text>
+            
+
           </View>
      
     </View>
@@ -91,8 +99,7 @@ const styles = StyleSheet.create({
     
   },
   headingContainer : {
-    flexDirection : "row",
-    justifyContent : "space-between",
+    
     padding : 15 
   },
   headingTxt : {
