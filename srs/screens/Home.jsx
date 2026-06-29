@@ -5,7 +5,15 @@ import LowStocks from './LowStocks'
 import Create from './Create'
 
 
-const data  = [
+
+
+
+
+const Home = () => {
+
+  const [view,setview] = useState(0)
+  const [data , setdata] =useState([
+    
   {id : 1 , name : "Dona" , stock : 5, unit : "Bori"},
   {id : 2 , name : "Pattal" , stock : 8 , unit : "Bori"},
   {id : 3 , name : "Fancy Glass" , stock : 3 , unit : "Cartoon"},
@@ -14,13 +22,8 @@ const data  = [
   {id : 6 , name : " Wood Spoon" , stock : 25 , unit : "packet"},
   {id : 7 , name : "Plastic Spoon" , stock : 30 , unit : "Packet"},
   
-]
 
-
-
-const Home = () => {
-
-  const [view,setview] = useState(0)
+  ])
   return (
     <View  style = {styles.Container}>
       <Text  style = {styles.txt}> Dashboard</Text>
@@ -46,7 +49,7 @@ const Home = () => {
       </View>
       {view === 0 && <AllItems data = {data}/>}
       {view === 1 && <AllItems data = {data.filter ((item) => item.stock <6 ) }/>}
-      {view === 2 && <Create data={data}/>}
+      {view === 2 && <Create data={data} setdata = {setdata}/>}
     </View>
   )
 }

@@ -1,7 +1,7 @@
 import { Button, FlatList, Pressable, StyleSheet, Text, TextInput, View } from 'react-native'
 import React, { useState } from 'react'
 
-export default function Create({data}) {
+export default function Create({data, setdata}) {
   const [itemName , setitemName] = useState('')
   const [stockAmt ,setstockAmt] = useState('')
   return (
@@ -41,29 +41,20 @@ export default function Create({data}) {
               keyExtractor={(item) => item.id}
               renderItem={({item}) => (
                 <View style = {[styles.itemConatainer, {backgroundColor : item.stock < 6 ? "#ffcccc" : "#D7F6BFFF"}]}> 
-                  <Text style = {styles.ItemTxt}>
-                 {item.name}
-              </Text>
-              <Text style = {styles.ItemTxt}>
-                {item.stock}
-              </Text>
+                  <Text style = {styles.ItemTxt}> {item.name}</Text>
+              <Text style = {styles.ItemTxt}>{item.stock} </Text>
       
-                </View>
-      
-              )}
-              contentContainerStyle = {{gap : 10 }}/>
-          </View>
-          <View>
-             <Text style = {styles.ItemTxt}>
-                 Edit
-              </Text>
-              <Text style = {styles.ItemTxt}>
-                Delete
-              </Text>
-            
+             <View style = {{flexDirection : "row" , gap :10}}>
+             <Text style = {styles.ItemTxt}> Edit </Text>
+              <Text style = {styles.ItemTxt}>Delete </Text>
+            </View>
 
           </View>
-     
+          )}
+          
+      contentContainerStyle = {{gap : 10 }}
+      />
+    </View>
     </View>
   )
 }
@@ -119,7 +110,9 @@ const styles = StyleSheet.create({
   ItemTxt : {
 
     fontSize : 17 ,
-    fontWeight : "bold"
+    fontWeight : "bold",
+    
+    
   }
   
 })

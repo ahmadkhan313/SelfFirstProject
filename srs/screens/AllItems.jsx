@@ -28,8 +28,11 @@ const AllItems = ({data}) => {
           </View>
 
         )}
-        contentContainerStyle = {{gap : 10 }}/>
+        
+        contentContainerStyle = {{gap : 10 }}
+        />
     </View>
+    
   )
 }
 
