@@ -1,9 +1,8 @@
 import { FlatList, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-
 const AllItems = ({data}) => {
   return (
-    <View>
+    <View >
       <View style= {styles.headingContainer}>
         <Text style = {styles.headingTxt}>
            Items
@@ -14,6 +13,8 @@ const AllItems = ({data}) => {
       </View>
 
       <FlatList
+      
+      
         data = {data}
         keyExtractor={(item) => item.id}
         renderItem={({item}) => (
@@ -41,6 +42,7 @@ export default AllItems
 const styles = StyleSheet.create({
 
   headingContainer : {
+    flex:1,
     flexDirection : "row",
     justifyContent : "space-between",
     padding : 15 
@@ -51,6 +53,7 @@ const styles = StyleSheet.create({
     paddingVertical : 10
   },
   itemConatainer : {
+    flex:1,
      flexDirection : "row",
     justifyContent : "space-between",
     padding : 15 ,

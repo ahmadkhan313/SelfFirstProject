@@ -18,9 +18,7 @@ const Home = () => {
   {id : 2 , name : "Pattal" , stock : 8 , unit : "Bori"},
   {id : 3 , name : "Fancy Glass" , stock : 3 , unit : "Cartoon"},
   {id : 4 , name : "Normal Glass" , stock : 6 , unit : "Cartoon"},
-  {id : 5 , name : "Coffe Cup" , stock : 5 , unit : " Cartoon"},
-  {id : 6 , name : " Wood Spoon" , stock : 25 , unit : "packet"},
-  {id : 7 , name : "Plastic Spoon" , stock : 30 , unit : "Packet"},
+  
   
 
   ])
@@ -60,8 +58,7 @@ const styles = StyleSheet.create({
 
 
   Container : {
-    width : "100%" ,
-    height : "100%", 
+   flex : 1 , 
     padding : "4%" , 
     backgroundColor : "#dadada"
   },

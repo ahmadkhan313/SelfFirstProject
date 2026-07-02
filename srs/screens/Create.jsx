@@ -4,6 +4,17 @@ import React, { useState } from 'react'
 export default function Create({data, setdata}) {
   const [itemName , setitemName] = useState('')
   const [stockAmt ,setstockAmt] = useState('')
+  const addItemHandler = ()=> {
+     const newItem = {
+      id: Date.now(),
+    name : itemName,
+  stock : stockAmt     }
+
+    setdata ([...data ,newItem])
+    setitemName ('')
+    setstockAmt ('')
+
+  }
   return (
     <View style = {styles.container}>
       <TextInput
@@ -23,18 +34,13 @@ export default function Create({data, setdata}) {
      
       />
 
-      <Pressable style= {styles.Button}>
+      <Pressable style= {styles.Button} onPress={()=> addItemHandler()}>
         <Text style ={styles.btntxt}>
-          Add Item 
+          Add item in the stock
         </Text>
       </Pressable>
       <View>
-            <View style= {styles.headingContainer}>
-              <Text style = {styles.headingTxt}>
-                 All itm in the stock
-              </Text>
-             
-            </View>
+          
       
             <FlatList
               data = {data}
@@ -42,10 +48,12 @@ export default function Create({data, setdata}) {
               renderItem={({item}) => (
                 <View style = {[styles.itemConatainer, {backgroundColor : item.stock < 6 ? "#ffcccc" : "#D7F6BFFF"}]}> 
                   <Text style = {styles.ItemTxt}> {item.name}</Text>
-              <Text style = {styles.ItemTxt}>{item.stock} </Text>
+             
       
-             <View style = {{flexDirection : "row" , gap :10}}>
+             <View style = {{flexDirection : "row" , gap :20}}>
+               <Text style = {styles.ItemTxt}>{item.stock} </Text>
              <Text style = {styles.ItemTxt}> Edit </Text>
+             
               <Text style = {styles.ItemTxt}>Delete </Text>
             </View>
 
@@ -82,7 +90,8 @@ const styles = StyleSheet.create({
     paddingVertical : 10 ,
     justifyContent : "center",
     alignItems : "center",
-    marginTop : 15
+    marginTop : 15,
+    marginBottom : 15
   },
   btntxt : {
     fontSize : 17 ,

@@ -5,7 +5,7 @@ import Home from './srs/screens/Home'
 
 const App = () => {
   return (
-    <View>
+    <View style={{flex : 1}}>
       <Home/>
 
     </View>
